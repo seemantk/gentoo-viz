@@ -1,4 +1,4 @@
 gentoo-viz
 ==========
 
-Gentoo Visualizations
+Gentoo Visualizations.  This repo contains the data and source code for the galaxy visualization.
