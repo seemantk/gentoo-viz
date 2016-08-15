@@ -1,0 +1,56 @@
+.page-header h1,
+.page-header h2,
+.page-header h3,
+.page-header h4,
+.page-header h5,
+.page-header h6 {
+	display: inline-block;
+}
+
+.intro-header {
+	padding-top: 0;
+}
+
+.navbar {
+	margin-bottom: 0;
+}
+
+
+.btn-default {
+	color: #000;
+	background-color: #fff;
+}
+
+section {
+	padding: 5px 0;
+	margin: 5px 0;
+}
+
+.content-section-a {
+	padding: 25px 50px 50px 50px;
+}
+
+#toolbox{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 0.5em;
+    margin-left: 1em;
+    border: 2px solid #EEEEEE;
+    border-radius: 5px;
+    padding: 1em;
+    z-index: 5;
+}
+
+#toolbox input{
+    width: 30px;
+    opacity: 0.4;
+}
+#toolbox input:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+#hidden-file-upload{
+    display: none;
+}

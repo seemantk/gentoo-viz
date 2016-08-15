@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Making toys, telling stories.">
+	<meta name="author" content="Seemant Kulleen">
+
+	<title>Gentoo Developers</title>
+
+<!-- Bootstrap -->
+	<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+	<!-- My Bootstrap Overrides -->
+	<link href="/css/custom.css" rel="stylesheet" type="text/css">
+
+<!-- Fonts -->
+	<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet" type="text/css">
+
+<!-- shims -->
+	<!--HTML5 shim, for IE6-8 support of HTML5 elements-->
+	<!--[if lt IE 9]>
+	<script async src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script async src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+
+<!-- Google Analytics -->
+	<script>
+  	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  	  	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  	  	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  	  ga('create', 'UA-47547950-2', 'auto');
+	  ga('require', 'linkid', 'linkid.js');
+  	  ga('send', 'pageview');
+
+	</script>
+
+
+</head>
+
+<body id="page-top" class="index">
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="sr-only">Toggle Navigation</span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/#page-top">
+				seemant<strong>k</strong>
+			</a>
+		</div>
+				
+		<!-- Collect nav links, forms and other content for toggling -->
+		<div class="collapse navbar-collapse navbar-right navbar-collapse">
+        	<ul class="nav navbar-nav">
+				<li><a href="/#about">About</a></li>
+				<li><a href="/#stories">Portfolio</a></li>
+				<li><a href="/#contact">Contact</a></li>
+    		</ul>
+		</div><!--.navbar-collapse-->
+    </div><!-- .container -->
+</nav>
+
+
+<article>
+    <div class="page-header text-center">
+        <div class="container">
+            <div class="row">
+                <h4 class="navbar-left"><small>Data Visualization</small></h4>
+                <h1>Gentoo Linux Galaxy</h1>
+            </div><!--.row-->
+            <div class="row">
+                <h3>Gentoo Developers over the years.</h3>
+				<p class="lead"></p>
+            </div><!--.row-->
+        </div><!--.container-->
+    </div><!--.page-header-->
+
+
+	<!-- The Visualization -->
+	<section id="visualization">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 col-sm-10 text-center" id="tardis"></div>
+				<div class="col-lg-2 col-sm-2 text-center" id="controls">
+					<div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-info" id="yalp">
+		<input type="radio" name="player">
+        <i class="fa fa-play fa-flip-horizontal"></i>
+    </label>
+    <label class="btn btn-info" id="pause">
+		<input type="radio" name="player">
+        <i class="fa fa-stop"></i>
+    </label>
+    <label class="btn btn-info" id="play">
+		<input type="radio" name="player">
+        <i class="fa fa-play"></i>
+    </label>
+</div><!--.btn-group-->
+
+				</div><!--.col-lg-2#controls-->
+			</div><!--.row-->
+			<div class="row">
+				<div class="col-lg-10 col-sm-10 text-center" id="viz"></div>
+				<div class="col-lg-2 col-sm-2 text-center" id="metadata">
+					<div class="col-lg-12 col-sm-12 text-center legend">
+						<h4 id="legend-title"></h4>
+<table id="legend" class="table table-condensed table-responsive">
+    <thead></thead>
+    <tbody></tbody>
+</table><!--.table#legend-->
+
+
+					</div><!--.legend-->
+				</div><!--.col-lg-3#metadata-->
+			</div><!--.row-->
+		</div><!--.container-->
+	</section><!--/#visualization-->
+
+<!-- Auxiliary files needed for this viz -->
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+
+<script src="js/abacus.js" charset="utf-8"></script>
+<link href="css/style.css" rel="stylesheet">
+
+    <!-- The explanations -->
+    <section id="description">
+        <div class="content-section-a" id="explanation">
+            <div class="row">
+                <div class="list-group col-lg-4 col-sm-6" id="vizabout">
+                    <h3><small>About This Viz</small></h3>
+                    <div class="list-group-item">
+
+<p>Data is hard. And incomplete. If you see anything inaccurate or that you disagree with, please contact us. File a bug or send us a message on the forums, mailing lists or social media.</p>
+
+<p>Gentoo Linux activity since the first CVS commit in July 2000. To pause the activity you can either click the pause/stop button or click on a date (month or year). There will be a slight difference in the paused display depending on which you hit. The pause button literally pauses the action. The date strip shows the entire historical snapshot per the date clicked.</p>
+
+                    </div><!--.list-group-item-->
+                </div><!--/#vizabout-->
+                <div class="list-group col-lg-4 col-sm-6" id="vizhow">
+                    <h3><small>How it Works</small></h3>
+                    
+                    <div class="list-group-item">
+                        <h4>scatterplot</h4>
+                        <p>The <em>twinkly</em> component of this viz represents the developers.  The faded versions of each color indicate that the developer is inactive in a given month.</p>
+
+                    </div><!--.list-group-item-->
+                    
+                    <div class="list-group-item">
+                        <h4>streamgraph</h4>
+                        <p>This shows the total headcount.</p>
+
+                    </div><!--.list-group-item-->
+                    
+                    <div class="list-group-item">
+                        <h4>time axis</h4>
+                        <p>The axis for the streamgaph also indicates the current time in the scatterplot.  Jump to any time by clicking along the streamgraph.</p>
+
+                    </div><!--.list-group-item-->
+                    
+                    <div class="list-group-item">
+                        <h4>player controls</h4>
+                        <p>The reverse play button will reverse time and play back to the "big bang" event at the beginning.</p>
+
+                    </div><!--.list-group-item-->
+                    
+                    <div class="list-group-item">
+                        <h4>tooltips</h4>
+                        <p>hover over a circle to see more details on a particular developer.</p>
+
+                    </div><!--.list-group-item-->
+                    
+                </div><!--.list-group #vizhow-->
+                <div class="list-group col-lg-4 col-lg-offset-0 col-sm-6 col-sm-offset-3" id="related">
+                    <h3><small>See Also</small></h3>
+                    
+                    <div class="list-group-item">
+                        <a href="https://medium.com/linux-operation-system/re-emerging-history-i-27f8b0b493d3"></a>
+                    </div><!--.list-group-item-->
+                    
+                    <div class="list-group-item">
+                        <a href="">Re-emerging History (I)</a>
+                    </div><!--.list-group-item-->
+                    
+                </div><!--/#related-->
+            </div><!--.row-->
+        </div><!--.content-section-a #explanation-->
+    </section><!--/#description-->
+</article><!-- the bookend for the article -->
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-sm-6 text-left">
+					<p class="copyright text-muted small">
+						<small>
+							&copy; 2014-2015 Seemant Kulleen. All rights reserved.
+						</small>
+					</p>
+				</div><!--.col-lg-6 .col-sm-6-->
+				<div class="col-lg-6 col-sm-6 text-right">
+					<a href="#page-top" class="btn btn-default btn-sm">
+						<small>
+							<i class="fa fa-arrow-circle-up fa-fw"></i>Back to Top
+						</small>
+					</a>
+				</div><!--.col-lg-6 .col-sm-6-->
+			</div><!--.row-->
+		</div><!--.container-->
+	</footer>
+
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+	window.jQuery ||
+		document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')
+</script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</script>
+
+</body>
+</html>
+

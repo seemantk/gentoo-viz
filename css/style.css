@@ -1,0 +1,128 @@
+#visualization {
+	background-color: #000;
+	padding-top: 10px;
+}
+
+.axis path,
+.axis line {
+	fill: none;
+	stroke: #ccc;
+	shape-rendering: crispEdges;
+}
+
+.label,
+text {
+	fill: #ccc;
+}
+
+
+.brush .extent {
+	stroke: #fff;
+	fill-opacity: .125;
+	shape-rendering: crispEdges;
+}
+
+circle {
+	opacity: 0.8;
+	stroke-width: 1;
+}
+
+/* Gentoo color scheme for the circles */
+
+.recruit {
+	fill: #3dff00;
+	stroke: #044404;
+}
+
+.developer {
+	fill: #babaf8;
+	stroke: #34349c;
+}
+
+.retired {
+	fill: #7a5ada;
+	stroke: #45347b;
+}
+
+.joinpart {
+	fill: #6048a8;
+}
+
+#you {
+	stroke: #d80000;
+	stroke-width: 2;
+}
+
+/* Gentoo color scheme for the tardis lights */
+.current {
+	fill: #c0c0c0;
+}
+
+.notcurrent {
+	fill: #404040;
+}
+
+/* other things */
+dt {
+	float:left;
+	clear: left;
+}
+
+dd {
+	float: right;
+	text-align: left;
+}
+
+.panel-footer,
+.panel-info > .panel-heading {
+	background-color: #772953;
+	color: #e5dff0;
+}
+
+// Color gradients in the dev-focused tardis display.
+.bugs {
+	stroke-width: 1.5px;
+}
+
+.bugsrecruit {
+	stop-color: #3dff00;
+}
+
+.bugsdeveloper {
+	stop-color: #fbb;
+}
+
+.bugsretire {
+	stop-color: #c02020;
+}
+
+.commits {
+	stroke-width: 1.5px;
+}
+
+.commitsrecruit {
+	stop-color: #044404;
+}
+
+.commitsdeveloper {
+	stop-color: #982424;
+}
+
+.commitsretire {
+	stop-color: #7d0a0a;
+}
+
+div.tooltip {
+	position: absolute;
+	text-align: center;
+	padding: 10px;
+	font: 12px sans-serif;
+	background: #ffb;
+	border: 0px;
+	border-radius: 8px;
+	pointer-events: none;
+}
+
+#legend {
+	color: #c0c0c0;
+}
